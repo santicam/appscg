@@ -10,15 +10,32 @@ Funciones disponibles:
 * Gestión de copias de seguridad
 
 ## PROYECTO
-Esta aplicación corresponde al proyecto de fin de curso de ciclo superior Desarrollo de Aplicaciones Multiplataforma realizado en junio de 2021 por Santiago Cámara Sánchez, calificado con un 10.
+Esta aplicación corresponde al proyecto de fin de curso del ciclo superior Desarrollo de Aplicaciones Multiplataforma realizado en junio de 2021 por Santiago Cámara Sánchez, calificado con un 10.
 
 ## CARPETAS
 * Código/appscg
-  - Entrorno de desarrollo de la app.
-  - Debe estar instalado previamente node y npm
-  - Instalar antes de la primera ejecución "electron" mediante: npm install electron
+  - Esta carpeta tiene el entrorno de desarrollo de la app.
+  - Debe estar instalado previamente node y npm.
+  - Instalar "electron" antes de la primera ejecución mediante: npm install electron
   - Ejecutar la app mediante: npm start 
+  
+* Instalador
+  - Contiene el programa para hacer la instalación de la app en windows.
 
+* Memoria
+  - Contiene la memoria del proyecto en formato pdf.
+  
+* Portable
+  - Fichero comprimido en zip de la versión portable de la app para windows.
+  
+* Presentación
+  - Contiene la presentación del proyecto en formato powerpoint.
+  
+* Recursos pruebas
+  - Contiene diversos ficheros de facturas, tikets, imágenes, iconos, manuales para poder realizar pruebas con la app.
+## PRUEBAS
+La aplicación una vez instalada (o en su versión portable) está con la base de datos de artículos vacía.
+Si se desea realizar pruebas se recomienda que, desde la opción de copias de seguridad, se recupere el paquete "DEMO" 
 ## LICENCIA
 Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
