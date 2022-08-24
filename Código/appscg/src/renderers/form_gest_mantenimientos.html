@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SCG</title>
+    <link rel="stylesheet" href="./css/photon.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="window">
+        <header class="toolbar toolbar-header">
+            <h1 class="title">Calendario mantenimiento periódico</h1>
+        </header>
+        <div class="window-content">
+            <div class="padded">
+                <div class="form-actions">
+                    <button id="btn_salir1" class="btn btn-form btn-warning">
+                        <span class="icon icon-text icon-left-bold"></span>Salir</button>
+                </div>
+                <h1 align="center">Mantenimientos periódicos</h1>
+                <div class="form-group">
+                    <span style= "margin-left: 20px;">Filtrar por: </span>
+                    <select class="form-control" id="filtroMNT" style="width: 40%">
+                        <option value="0">Ver todas las fechas</option>
+                        <option value="1">Ver desde los últimos 90 días en adelante</option>
+                        <option value="2">Ver desde hoy en adelante</option>
+                        <option value="3">Solo pendientes de realizar</option>
+                        <option value="4">Solo realizados</option>
+                    </select>
+                    <span style="margin-left: 30px;" class="icon icon-search"></span>
+                    <input class="form-control" id="itemMNT" type="text" placeholder="Buscar elemento" style="width: 40%">
+                </div>
+                <table class="table-striped padded">
+                    <thead>
+                        <tr>
+                            <th>Elemento</th>
+                            <th>Fecha prevista</th>
+                            <th>Descripción</th>
+                            <th align="center">Fecha real</th>
+                            <th>Observaciones</th>
+                            <th>Documento</th>
+                            <th align="center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="datosTablaCalendario">
+                    </tbody>
+                </table>
+                <div class="form-actions">
+                    <button id="btn_salir2" class="btn btn-form btn-warning">
+                        <span class="icon icon-text icon-left-bold"></span>Salir</button>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+    <script src="form_gest_mantenimientos.js"></script>
+</body>
+
+</html>

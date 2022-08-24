@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SCG</title>
+    <link rel="stylesheet" href="./css/photon.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="window">
+        <header class="toolbar toolbar-header">
+            <h1 class="title">Añadir nuevo elemento</h1>
+        </header>
+
+        <div class="window-content">
+
+            <div class="padded">
+                <img src="" id="imagen_item"
+                style="width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px; float: right;">
+              <div class="form-group">
+                <label style="text-align: right; width: 18%;">Nombre</label>
+                <input id="nombre" type="text" class="form-control" placeholder="Nombre del elemento"
+                  style="width: 40%">
+              </div>
+              <div class="form-group">
+                <label style="text-align: right; width: 18%">Marca y modelo</label>
+                <input id="marcamodelo" type="text" class="form-control" placeholder="marca y modelo"
+                  style="width: 40%">
+              </div>
+              <div class="form-actions">
+                <label style="text-align: right; width: 18%"> </label>
+                <button id="btn_cambio_imagen" class="btn btn-form btn-primary" style="margin-left: 0px;">Cambiar imagen
+                  <span class="icon icon-text icon-camera"></span></button>
+              </div>
+              <div class="form-group">
+                <label style="text-align: right; width: 18%"><span id="iconocat"></span> Categoría</label>
+                <div id="listacategorias" style="display: inline;">
+                </div>
+              </div>
+              <div class="form-group">
+                <label style="text-align: right; width: 18%">Fecha de compra</label>
+                <input id="fcompra" type="date" class="form-control" style="width: 40%">
+              </div>
+              <div class="form-group">
+                <label style="text-align: right; width: 18%">Precio</label>
+                <input id="importe" type="number" class="form-control" placeholder="precio" min="0" style="width: 40%">
+              </div>
+              <div class="form-group">
+                <label style="text-align: right; width: 18%">Tienda</label>
+                <div id="listatiendas" style="display: inline;">
+                </div>
+              </div>
+              <div class="form-actions">
+                <label style="text-align: right; width: 18%"> </label>
+                <button id="btn_guardar_factura" style="margin-left: 0px;" class="btn btn-form btn-primary">
+                  <span class="icon icon-text icon-download"></span>Guardar factura</button>
+                  <span id="textoFac" style="margin-left: 10px;"></span>
+              </div>
+              <div class="form-actions">
+                <label style="text-align: right; width: 18%"> </label>
+                <button id="btn_guardar_manual" style="margin-left: 0px; margin-top: 10px;" class="btn btn-form btn-primary">
+                  <span class="icon icon-text icon-download"></span>Guardar manual</button>
+                  <span id="textoMan" style="margin-left: 10px;"></span>
+              </div>
+              <hr>
+              <div class="checkbox">
+                <label><input type="checkbox" id="chk_garantia"> El producto tiene garantía</label>
+              </div>
+              <div class="form-group" id=calculogarantia>
+                <input id="unidades" type="number" class="form-control" placeholder="tiempo" min="0" style="width: 15%">
+                <select class="form-control" id="periodo" style="width: 15%">
+                  <option value="AA">Años</option>
+                  <option value="MM">Meses</option>
+                  <option value="DD">Días</option>
+                </select>
+                <button id="btn_calcular" class="btn btn-form btn-primary">
+                  <span class="icon icon-text icon-calendar"></span>Calcular garantía</button>
+                <span id="textogarantia" style="margin-left: 25px;"></span>
+              </div>
+              <hr>
+              <div class="checkbox">
+                <label><input type="checkbox" id="chk_mantenimientos"> El producto necesita mantenimiento
+                  periódico</label>
+                  <input id="motivoMant" type="text" class="form-control" placeholder="Motivo del mantenimiento"
+                  style="width: 50%; margin-left: 34px">
+              </div>
+              <div class="form-group" id=calculoMNT>
+                <span>Nº mantenimientos:</span>
+                <input id="numeroMNT" type="number" class="form-control" min="0" max="50" style="width: 8%">
+                <span>cada:</span>
+                <input id="unidadesMNT" type="number" class="form-control" placeholder="tiempo" min="0" style="width: 12%">
+                <select class="form-control" id="periodoMNT" style="width: 15%">
+                  <option value="AA">Años</option>
+                  <option value="MM">Meses</option>
+                  <option value="DD">Días</option>
+                </select>
+                <button id="btn_calcularMNT" class="btn btn-form btn-primary" style= "margin-left: 15px;">
+                  <span class="icon icon-text icon-tools"></span>Generar mantenimientos</button>
+                <span id="textoMNT" style="margin-left: 10px;"></span>
+              </div>
+              <div class="form-group">
+                <label style="text-align: right; width: 18%; margin-bottom: 21px;">Notas</label>
+                <textarea id="notas" style="width: 81%" class="form-control" rows="2"></textarea>
+              </div>
+              <div class="form-actions">
+                <button id="btn_cancel" class="btn btn-form btn-warning">
+                  <span class="icon icon-text icon-cancel-squared"></span>Cancelar</button>
+                <button id="btn_ok" class="btn btn-form btn-primary">
+                  <span class="icon icon-text icon-check"></span>OK</button>
+              </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+    <script src="form_add_itemregister.js"></script>
+
+</body>
+
+</html>

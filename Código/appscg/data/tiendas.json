@@ -1,0 +1,35 @@
+{
+    "0": {
+        "nombre": "Otras tiendas"
+    },
+    "1": {
+        "nombre": "Alcampo"
+    },
+    "2": {
+        "nombre": "Aldi"
+    },
+    "3": {
+        "nombre": "AliExpress"
+    },
+    "4": {
+        "nombre": "Amazon"
+    },
+    "5": {
+        "nombre": "Carrefour"
+    },
+    "6": {
+        "nombre": "El Corte Inglés"
+    },
+    "7": {
+        "nombre": "Ikea"
+    },
+    "8": {
+        "nombre": "Lidl"
+    },
+    "9": {
+        "nombre": "Media Markt"
+    },
+    "10": {
+        "nombre": "PC Componentes"
+    }
+}

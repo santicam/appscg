@@ -1,0 +1,10 @@
+appscg versión portable para windows
+====================================
+
+Para utilizar la verión portable de la aplicación se debe descomprimir el archivo appscg-portable.zip
+
+Lanzar la aplicación con: appscg.exe
+
+No se requiere instalación previa.
+
+Si se quiere dejar de utilizar la aplicación es suficiente con borrar la carpeta.

@@ -1,0 +1,64 @@
+{
+  "name": "appscg",
+  "version": "1.5.0",
+  "license": "CC-BY-NC-SA-4.0",
+  "description": "SCG-Sistema de Control de Garantías",
+  "author": {
+    "name": "Santiago Cámara",
+    "email": "santi.camara@gmail.com"
+  },
+  "homepage": "https://github.com/santicam/",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron src/main.js",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "AppSCG",
+    "asar": false,
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "deb": {},
+    "win": {
+      "target": "NSIS",
+      "icon": "build/icon.ico",
+      "extraResources": [
+        "./backup/",
+        "./data/",
+        "./documentos/",
+        "./images/"
+      ]
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false
+    }
+  },
+  "devDependencies": {
+    "electron": "^12.0.9",
+    "electron-builder": "^22.10.5",
+    "electron-packager": "^15.2.0"
+  },
+  "dependencies": {
+    "fs-extra": "^10.0.0"
+  }
+}

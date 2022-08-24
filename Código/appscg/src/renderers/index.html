@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title id="app_title">SCG</title>
+  <link rel="stylesheet" href="./css/photon.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+  <div class="window">
+    <header class="toolbar toolbar-header">
+      <h1 class="title">sistema control garantías</h1>
+      <div class="toolbar-actions">
+
+        <button id="btn_inicio" class="btn btn-default">
+          <span class="icon icon-home icon-text"></span>Inicio
+        </button>
+        <button id="btn_inventario" class="btn btn-default">
+          <span class="icon icon-doc-text icon-text"></span>Inventario
+        </button>
+        <button id="btn_mantenimientos" class="btn btn-default">
+          <span class="icon icon-tools icon-text"></span>Agenda de mantenimientos
+        </button>
+        <div class="btn-group">
+          <button id="btn_categorias" class="btn btn-default">
+            <span class="icon icon-archive icon-text"></span>Categorias
+          </button>
+          <button id="btn_tiendas" class="btn btn-default">
+            <span class="icon icon-basket icon-text"></span>Tiendas
+          </button>
+        </div>
+        <button id="btn_backup" class="btn btn-default">
+          <span class="icon icon-tools icon-database"></span>Copias de seguridad
+        </button>
+        <button id="btn_acercade" class="btn btn-default pull-right">
+          <span class="icon icon-info-circled icon-text"></span>Acerca de ...
+        </button>
+
+    </header>
+    <div class="window-content">
+      <div class="pane-group">
+        <div class="pane-one-third sidebar" style="overflow-y: scroll">
+          <div style="position: fixed; z-index: 9999; width: 31%; background-color: #f5f5f4; padding: 10px;">
+            <img id="logoSCG" src="" width="330"
+              style="display:block; margin-left: auto; margin-right: auto;">
+            <hr>
+          </div>
+          <div class="padded-more">
+            <div id="main01">
+              <p align="center" id="total_elem" style="margin: 0; padding: 0; padding-top: 190px;">Nº de elementos: </p>
+              <div class="form-group">
+                <select class="form-control" id="clasificacion">
+                  <option value="0">Por orden alfabético</option>
+                  <option value="1">Por fecha vencimiento de garantía</option>
+                  <option value="2">Por orden de alta en la aplicación</option>
+                </select>
+              </div>
+              <ul id="register-list" class="list-group">
+              </ul>
+            </div>
+            <div id="main02">
+              <div class="form-actions" style="padding-top: 190px;">
+                <button id="btn_salir" class="btn btn-form btn-warning">
+                  <span class="icon icon-text icon-left-bold"></span>Salir</button>
+              </div>
+              <div id="main_Add_T">
+                <div class="form-actions" style="padding: 20px 0px 20px">
+                  <button id="btn_Add_tienda" class="btn btn-form btn-primary">
+                    <span class="icon icon-text icon-plus-squared"></span>Añadir tienda</button>
+                </div>
+              </div>
+              <div id="main_Add_tiendas">
+                <div class="form-group">
+                  <label>Nombre</label>
+                  <input id="nombre_tienda_Add" type="text" class="form-control" placeholder="Nombre de la tienda">
+                </div>
+                <div class="form-actions">
+                  <button id="btn_Add_cancel_T" class="btn btn-form btn-warning">
+                    <span class="icon icon-text icon-cancel-squared"></span>Cancelar</button>
+                  <button id="btn_Add_ok_T" class="btn btn-form btn-primary">
+                    <span class="icon icon-text icon-check"></span>OK</button>
+                </div>
+              </div>
+
+              <div id="main_Add_B">
+                <div class="form-actions" style="padding: 20px 0px 20px">
+                  <button id="btn_Add_backup" class="btn btn-form btn-primary">
+                    <span class="icon icon-text icon-plus-squared"></span>Hacer nueva copia de seguridad</button>
+                </div>
+              </div>
+              <div id="main_Add_backup">
+                <div class="form-group">
+                  <label>Descripción</label>
+                  <input id="desc_backup_Add" type="text" class="form-control" placeholder="descripción de la copia de seguridad">
+                </div>
+                <div class="form-actions">
+                  <button id="btn_Add_cancel_B" class="btn btn-form btn-warning">
+                    <span class="icon icon-text icon-cancel-squared"></span>Cancelar</button>
+                  <button id="btn_Add_ok_B" class="btn btn-form btn-primary">
+                    <span class="icon icon-text icon-check"></span>OK</button>
+                </div>
+              </div>
+
+              <div id="main_Add_C">
+                <div class="form-actions" style="padding: 20px 0px 20px">
+                  <button id="btn_Add_categoria" class="btn btn-form btn-primary">
+                    <span class="icon icon-text icon-plus-squared"></span>Añadir categoría</button>
+                </div>
+              </div>
+              <div id="main_Add_categorias">
+                <div class="form-group">
+                  <label>Nombre</label>
+                  <input id="nombre_categoria_Add" type="text" class="form-control"
+                    placeholder="Nombre de la categoria">
+                </div>
+                <div class="form-group">
+                  <button id="btn_Add_Icono_C" class="btn btn-form btn-primary" style="margin-bottom: 5px;">
+                    <span class="icon icon-text icon-camera"></span>Elegir icono</button>
+                  <br>
+                  <img src="" id="imagen_icono_cat"
+                    style="width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
+                  <input id="nombre_categoria_icono_Add" type="text" class="form-control" disabled>
+                </div>
+                <div class="form-actions">
+                  <button id="btn_Add_cancel_C" class="btn btn-form btn-warning">
+                    <span class="icon icon-text icon-cancel-squared"></span>Cancelar</button>
+                  <button id="btn_Add_ok_C" class="btn btn-form btn-primary pull-right">
+                    <span class="icon icon-text icon-check"></span>OK</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pane">
+          <div class="padded-more">
+            <div id="mainElementos">
+              <img src="" id="imagen_item"
+                style="width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px; float: right;">
+              <div class="form-group">
+                <label style="text-align: right; width: 18%;">Nombre</label>
+                <input id="nombre" type="text" class="form-control" placeholder="Nombre del elemento"
+                  style="width: 40%">
+              </div>
+              <div class="form-group">
+                <label style="text-align: right; width: 18%">Marca y modelo</label>
+                <input id="marcamodelo" type="text" class="form-control" placeholder="marca y modelo"
+                  style="width: 40%">
+              </div>
+              <div class="form-actions">
+                <label style="text-align: right; width: 18%"> </label>
+                <button id="btn_cambio_imagen" class="btn btn-form btn-primary" style="margin-left: 0px;">Cambiar imagen
+                  <span class="icon icon-text icon-camera"></span></button>
+              </div>
+              <div class="form-group">
+                <label style="text-align: right; width: 18%"><span id="iconocat"></span> Categoría</label>
+                <div id="listacategorias" style="display: inline;">
+                </div>
+              </div>
+              <div class="form-group">
+                <label style="text-align: right; width: 18%">Fecha de compra</label>
+                <input id="fcompra" type="date" class="form-control" style="width: 40%">
+              </div>
+              <div class="form-group">
+                <label style="text-align: right; width: 18%">Precio</label>
+                <input id="importe" type="number" class="form-control" placeholder="precio" min="0" style="width: 40%">
+              </div>
+              <div class="form-group">
+                <label style="text-align: right; width: 18%">Tienda</label>
+                <div id="listatiendas" style="display: inline;">
+                </div>
+              </div>
+              <div class="form-group" id="doc_factura" style="width: 58%">
+                <button id="btn_guardar_factura" style="margin-left: 14%;" class="btn btn-form btn-primary">
+                  <span class="icon icon-text icon-download"></span>Guardar factura</button>
+                <button id="btn_ver_factura" style="margin-left: 3%; display: none" class="btn btn-form btn-positive">
+                  <span class="icon icon-text icon-doc-text-inv"></span>Visualizar factura</button>
+              </div>
+              <div class="form-group" id="doc_manual" style="width: 58%">
+                <button id="btn_guardar_manual" style="margin-left: 13%;" class="btn btn-form btn-primary">
+                  <span class="icon icon-text icon-download"></span>Guardar manual</button>
+                <button id="btn_ver_manual" style="margin-left: 3%; display: none" class="btn btn-form btn-positive">
+                  <span class="icon icon-text icon-book-open"></span>Visualizar manual</button>
+              </div>
+
+              <hr>
+              <div class="checkbox">
+                <label><input type="checkbox" id="chk_garantia"> El producto tiene garantía</label>
+              </div>
+              <div class="form-group" id=calculogarantia>
+                <input id="unidades" type="number" class="form-control" placeholder="tiempo" min="0" style="width: 15%">
+                <select class="form-control" id="periodo" style="width: 15%">
+                  <option value="AA">Años</option>
+                  <option value="MM">Meses</option>
+                  <option value="DD">Días</option>
+                </select>
+                <button id="btn_calcular" class="btn btn-form btn-primary">
+                  <span class="icon icon-text icon-calendar"></span>Calcular garantía</button>
+                <span id="textogarantia" style="margin-left: 25px;"></span>
+              </div>
+              <hr>
+              <div class="checkbox">
+                <label><input type="checkbox" id="chk_mantenimientos"> El producto necesita mantenimiento
+                  periódico</label>
+                  <input id="motivoMant" type="text" class="form-control" placeholder="Motivo del mantenimiento"
+                  style="width: 50%; margin-left: 34px">
+              </div>
+              <div class="form-group" id=calculoMNT>
+                <span>Nº mantenimientos:</span>
+                <input id="numeroMNT" type="number" class="form-control" min="0" max="50" style="width: 8%">
+                <span>cada:</span>
+                <input id="unidadesMNT" type="number" class="form-control" placeholder="tiempo" min="0" style="width: 12%">
+                <select class="form-control" id="periodoMNT" style="width: 15%">
+                  <option value="AA">Años</option>
+                  <option value="MM">Meses</option>
+                  <option value="DD">Días</option>
+                </select>
+                <button id="btn_calcularMNT" class="btn btn-form btn-primary" style= "margin-left: 15px;">
+                  <span class="icon icon-text icon-tools"></span>Generar mantenimientos</button>
+                <span id="textoMNT" style="margin-left: 10px;"></span>
+              </div>
+              <div class="form-group">
+                <label style="text-align: right; width: 18%; margin-bottom: 21px;">Notas</label>
+                <textarea id="notas" style="width: 81%" class="form-control" rows="2"></textarea>
+              </div>
+              <div class="form-actions">
+                <button id="btn_cancel" class="btn btn-form btn-warning">
+                  <span class="icon icon-text icon-cancel-squared"></span>Cancelar</button>
+                <button id="btn_ok" class="btn btn-form btn-primary">
+                  <span class="icon icon-text icon-check"></span>OK</button>
+                <button id="btn_edit" class="btn btn-form btn-primary">
+                  <span class="icon icon-text icon-pencil"></span>Editar</button>
+                <button id="btn_delete" class="btn btn-form btn-negative">
+                  <span class="icon icon-text icon-trash"></span>Eliminar</button>
+                <button id="btn_add" class="btn btn-form btn-primary pull-right">
+                  <span class="icon icon-text icon-plus-squared"></span>Añadir elemento</button>
+              </div>
+            </div>
+            <div id="mainInventario">
+              <h1 align="center">Inventario por categoría</h1>
+              <div class="form-group">
+                <span id="iconocatINV"></span>
+                <label style="margin-top: 15px">Categoría</label>
+                <div id="listacategoriasINV">
+                </div>
+              </div>
+              <table class="table-striped padded">
+                <thead>
+                  <tr>
+                    <th>Elemento</th>
+                    <th>Marca y modelo</th>
+                    <th align="center">Fecha de compra</th>
+                    <th align="right">Importe</th>
+                  </tr>
+                </thead>
+                <tbody id="datosTablaInventario">
+                </tbody>
+              </table>
+            </div>
+            <div id="mainTiendas">
+              <h1 align="center">Tiendas</h1>
+              <table class="table-striped padded">
+                <thead>
+                  <tr>
+                    <th>Nombre del establecimiento</th>
+                    <th align="center">nº usos</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="datosTablaTiendas">
+                </tbody>
+              </table>
+            </div>
+            <div id="mainCategorias">
+              <h1 align="center">Categorías</h1>
+              <table class="table-striped padded">
+                <thead>
+                  <tr>
+                    <th>Nombre de la categoría</th>
+                    <th align="center">icono</th>
+                    <th align="center">nº usos</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="datosTablaCategorias">
+                </tbody>
+              </table>
+            </div>
+            <div id="mainBackup">
+              <h1 align="center">Copias de seguridad</h1>
+              <table class="table-striped padded">
+                <thead>
+                  <tr>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="datosTablaBackup">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+
+</html>

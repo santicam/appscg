@@ -1,0 +1,62 @@
+{
+"0": {
+        "nombre": "Sin categoría",
+        "icono": "sin_categoria.png"
+    },
+"1": {
+        "nombre": "Audio",
+        "icono": "icono_cat_1.png"
+    },
+"2": {
+        "nombre": "Cocina",
+        "icono": "icono_cat_2.png"
+    },
+"3": {
+        "nombre": "Consolas y juguetes",
+        "icono": "icono_cat_3.png"
+    },
+"4": {
+        "nombre": "Deportes",
+        "icono": "icono_cat_4.png"
+    },
+"5": {
+        "nombre": "Electrodomésticos",
+        "icono": "icono_cat_5.png"
+    },
+"6": {
+        "nombre": "Fotografía",
+        "icono": "icono_cat_6.png"
+    },
+"7": {
+        "nombre": "Informática",
+        "icono": "icono_cat_7.png"
+    },
+"8": {
+        "nombre": "Joyas y relojes",
+        "icono": "icono_cat_8.png"
+    },
+"9": {
+        "nombre": "Moda",
+        "icono": "icono_cat_9.png"
+    },
+"10": {
+        "nombre": "Muebles",
+        "icono": "icono_cat_10.png"
+    },
+"11": {
+        "nombre": "Tablet/ebook",
+        "icono": "icono_cat_11.png"
+    },
+"12": {
+        "nombre": "Telefonía móvil",
+        "icono": "icono_cat_12.png"
+    },
+"13": {
+        "nombre": "TV y video",
+        "icono": "icono_cat_13.png"
+    },
+"14": {
+        "nombre": "Vehículos",
+        "icono": "icono_cat_14.png"
+    }
+}
